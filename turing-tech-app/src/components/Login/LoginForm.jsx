@@ -4,7 +4,6 @@ import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
-import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -15,7 +14,7 @@ import UserAuth from '../../api/UserAuth';
 const theme = createTheme();
 
 export default function LoginForm() {
-  const { http } = UserAuth();
+  const { http , setToken} = UserAuth();
   const [username, setUsername] = useState();
   const [password, setPassword] = useState();
 
@@ -24,6 +23,7 @@ export default function LoginForm() {
     event.preventDefault();
     http.post('/auth/login', { username: username, password: password })
       .then((res) => {
+        setToken(res.data.user,res.data.access_token);
         console.log(res);
       })
     // console.log(username + "  " + password);

@@ -4,22 +4,21 @@ import Dashboard from "./screens/Dashboard";
 
 import {
   BrowserRouter,
-  Switch,
+  Routes,
   Route,
 
 } from "react-router-dom";
 
 function App() {
   return (
-   <>
-   <BrowserRouter>
-        <Switch>
-          <Route path="/" exact component={LoginPage} />
-          <Route path="/dashboard" component={Dashboard} />
-         
-        </Switch>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" exact element={<LoginPage />}/>
+          <Route path="/dashboard" element={<Dashboard />}/>
+        </Routes>
       </BrowserRouter>
-   </>
+    </>
   );
 }
 
