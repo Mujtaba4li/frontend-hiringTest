@@ -1,29 +1,37 @@
-import * as React from 'react';
-
+import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
-// import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-// import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-// import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import './login.css'
 
+import UserAuth from '../../api/UserAuth';
+
 const theme = createTheme();
 
 export default function LoginForm() {
+  const { http } = UserAuth();
+  const [username, setUsername] = useState();
+  const [password, setPassword] = useState();
+
   const handleSubmit = (event) => {
+
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+    http.post('/auth/login', { username: username, password: password })
+      .then((res) => {
+        console.log(res);
+      })
+    // console.log(username + "  " + password);
+    // const data = new FormData(event.currentTarget);
+    // console.log({
+    //   email: data.get('email'),
+    //   password: data.get('password'),
+    // });
   };
 
   return (
@@ -44,10 +52,11 @@ export default function LoginForm() {
               margin="normal"
               required
               fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              autoComplete="email"
+              id="username"
+              label="Username"
+              name="username"
+              autoComplete="username"
+              onChange={e => setUsername(e.target.value)}
               autoFocus
             />
             <TextField
@@ -58,6 +67,7 @@ export default function LoginForm() {
               label="Password"
               type="password"
               id="password"
+              onChange={e => setPassword(e.target.value)}
               autoComplete="current-password"
             />
             <FormControlLabel
@@ -68,13 +78,12 @@ export default function LoginForm() {
               type="submit"
               fullWidth
               variant="contained"
+
               sx={{ mt: 3, mb: 2 }}
             >
               Sign In
             </Button>
-            <Grid container>
 
-            </Grid>
           </Box>
         </Box>
 
