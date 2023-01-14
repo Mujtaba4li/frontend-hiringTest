@@ -6,7 +6,7 @@ import NavBar from '../components/Nav/NavBar'
 function LoginPage() {
   return (
     <>
-    <NavBar/>
+    <NavBar display='hide'/>
     <LoginForm/>
     
     </>

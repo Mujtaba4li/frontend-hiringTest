@@ -1,0 +1,12 @@
+.background{
+    background: white !important;
+    background-color: white !important;
+    color:rgb(0, 0, 0);
+}
+.hide{
+    display: none !important;
+
+}
+.show{
+    display: block;
+}
