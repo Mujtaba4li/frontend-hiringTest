@@ -18,11 +18,14 @@ export default function UserAuth() {
         return user_details;
     }
 
-        //variables token get krnay k liyay ur user b tah k bar bar api call na krni paray user k liyay
-        const [token, setToken] = useState(getToken());
-        const [user, setUser] = useState(getUser());
-    
+    //variables token get krnay k liyay ur user b tah k bar bar api call na krni paray user k liyay
+    const [token, setToken] = useState(getToken());
+    const [user, setUser] = useState(getUser());
 
+    const logout = () => {
+        sessionStorage.clear();
+        navigate('/LoginPage');
+    }
     const saveToken = (user, token) => {
         //yaha 2option hain local b user kr saktay hain ur session be
         sessionStorage.setItem('token', JSON.stringify(token));
@@ -41,6 +44,7 @@ export default function UserAuth() {
     return {
         setToken: saveToken,
         token,
+        logout,
         user,
         getToken,
         http

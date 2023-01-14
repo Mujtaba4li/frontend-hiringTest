@@ -5,9 +5,17 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import itlogo from '../../assets/images/it-logo.png'
+import UserAuth from '../../api/UserAuth'
 
 import './nav.css'
 export default function NavBar(props) {
+  const {token,logout} =UserAuth();
+  const logoutUser=()=>{
+    if(token !== undefined)
+    {
+      logout();
+    }
+  }
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" className='background'>
@@ -21,7 +29,7 @@ export default function NavBar(props) {
           style={{ width: 200,}}
         />
           </Typography>
-          <Button variant="contained" className={props.display}>Login</Button>
+          <Button variant="contained" className={props.display} onClick={logoutUser}>Logout</Button>
         </Toolbar>
       </AppBar>
     </Box>
