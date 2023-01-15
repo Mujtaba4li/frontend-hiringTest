@@ -16,6 +16,7 @@ import FirstPageIcon from '@mui/icons-material/FirstPage';
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import LastPageIcon from '@mui/icons-material/LastPage';
+import Button from '@mui/material/Button';
 import './table.css'
 
 function TablePaginationActions(props) {
@@ -100,7 +101,7 @@ const rows = [
 ].sort((a, b) => (a.calories < b.calories ? -1 : 1));
 
 export default function TableData(props) {
-  const callDetails=props.callDetails;
+  const callDetails = props.callDetails;
   console.log(callDetails);
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
@@ -137,37 +138,51 @@ export default function TableData(props) {
         <TableBody>
           {
             // (rowsPerPage > 0
-          //   ? rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-          //   : rows
-          // )
-          callDetails.map((row) => (
-            <TableRow key={row.id}>
-              <TableCell component="th" scope="row">
-                {row.call_type}
-              </TableCell>
-              <TableCell style={{ width: 160 }} align="right">
-                {row.direction}
-              </TableCell>
-              <TableCell style={{ width: 160 }} align="right">
-                {row.duration}
-              </TableCell>
-              <TableCell style={{ width: 160 }} align="right">
-                {row.from}
-              </TableCell>
-              <TableCell style={{ width: 160 }} align="right">
-                {row.to}
-              </TableCell>
-              <TableCell style={{ width: 160 }} align="right">
-                {row.via}
-              </TableCell>
-              <TableCell style={{ width: 160 }} align="right">
-                {row.created_at}
-              </TableCell>
-              <TableCell style={{ width: 160 }} align="right">
-                {row.is_archived}
-              </TableCell>
-            </TableRow>
-          ))}
+            //   ? rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+            //   : rows
+            // )
+            callDetails.map((row) => (
+              <TableRow key={row.id}>
+                <TableCell component="th" scope="row">
+                  {row.call_type}
+                </TableCell>
+                <TableCell style={{ width: 160 }} align="right">
+                  {row.direction}
+                </TableCell>
+                <TableCell style={{ width: 160 }} align="right">
+                  {row.duration}
+                </TableCell>
+                <TableCell style={{ width: 160 }} align="right">
+                  {row.from}
+                </TableCell>
+                <TableCell style={{ width: 160 }} align="right">
+                  {row.to}
+                </TableCell>
+                <TableCell style={{ width: 160 }} align="right">
+                  {row.via}
+                </TableCell>
+                <TableCell style={{ width: 160 }} align="right">
+                  { 
+                row.created_at.getmonth() }
+                  
+                  
+                </TableCell>
+                <TableCell style={{ width: 160 }} align="right">
+                  {(row.is_archived==true)? <div className='arch'>Archived</div> : <div className='unarch'>Unarchive</div>}
+                </TableCell>
+                <TableCell style={{ width: 160 }} align="right">
+                  <Button
+                    variant="contained"
+                    size="small"
+                    onClick={() => {
+                      alert("Button clicked")
+                    }}
+                  >
+                    Add note
+                  </Button>
+                </TableCell>
+              </TableRow>
+            ))}
 
           {emptyRows > 0 && (
             <TableRow style={{ height: 53 * emptyRows }}>
@@ -193,7 +208,7 @@ export default function TableData(props) {
               onRowsPerPageChange={handleChangeRowsPerPage}
               ActionsComponent={TablePaginationActions}
             />
-           
+
           </TableRow>
         </TableFooter>
       </Table>

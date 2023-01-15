@@ -6,3 +6,15 @@
 .myhead{
     background-color: rgb(245, 245, 245) !important;
 }
+.arch{
+    background-color: rgb(202, 255, 200);
+    border-radius: .4rem ;
+    padding: 2px;
+    padding-right:1.5rem ;
+}
+.unarch{
+    background-color: rgb(255, 228, 228);
+    border-radius: .4rem ;
+    padding: 2px;
+    padding-right:1.5rem ;
+}
