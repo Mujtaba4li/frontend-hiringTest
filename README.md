@@ -4,6 +4,12 @@
 ### LinkedIn: https://www.linkedin.com/in/mujtaba-shafique/
 ### GitHub: https://github.com/Mujtaba4li/
 
+## To start project instructions
+-First clone the project(or repository)
+Then:-
+- 'cd turing-tech-app'
+- 'npm init'
+- 'npm start'
 # :phone: TuringTech - Frontend technical test (Test instruction)
 
 This test is a part of our hiring process at TuringTech for the Frontend Engineer position. It should take you between 6 to 8 hours, depending on your experience, to implement the minimal version. But we thought about a few bonuses, so feel free to spend some time on them if you want.
