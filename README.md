@@ -1,8 +1,8 @@
 ## Deployed Link: https://frontend-hiring-test-mujtaba-shafique.vercel.app/
-#From Mujtaba Shafique 
-Personal Website: https://mujtaba-ali.vercel.app/
-LinkedIn: https://www.linkedin.com/in/mujtaba-shafique/
-GitHub: https://github.com/Mujtaba4li/
+# From Mujtaba Shafique 
+ ### Personal Website: https://mujtaba-ali.vercel.app/
+### LinkedIn: https://www.linkedin.com/in/mujtaba-shafique/
+### GitHub: https://github.com/Mujtaba4li/
 
 # :phone: TuringTech - Frontend technical test (Test instruction)
 
