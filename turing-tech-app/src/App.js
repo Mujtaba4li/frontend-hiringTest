@@ -8,6 +8,7 @@ import {
   Route,
 
 } from "react-router-dom";
+import PageNotFound from "./screens/PageNotFound";
 
 function App() {
   // const navigate=useNavigate();
@@ -22,6 +23,7 @@ function App() {
       <Routes>
         <Route path="/" exact element={<LoginPage />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
 
     </>

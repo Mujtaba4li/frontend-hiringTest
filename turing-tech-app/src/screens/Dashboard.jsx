@@ -1,11 +1,12 @@
 import React from 'react'
 import NavBar from '../components/Nav/NavBar'
+import CallDetails from '../components/CallDetails/CallDetails'
 
 function Dashboard() {
   return (
     <>
     <NavBar/>
-    <div>Dashboard</div>
+    <CallDetails/>
     </>
   )
 }
