@@ -31,6 +31,8 @@ const CallDetails = () => {
   return (
     <>
       <h1 className='title'>Turing Technologies frontend test</h1>
+     
+
    {renderElement()}
 
     </>

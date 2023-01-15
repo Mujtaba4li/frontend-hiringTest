@@ -1,20 +1,61 @@
-.mytable{
-    margin-left:2rem !important; 
-    margin-right:2rem !important; 
-    width: 80rem !important;
+.mytable {
+  margin-left: 2rem !important;
+  margin-right: 2rem !important;
+  width: 80rem !important;
 }
-.myhead{
-    background-color: rgb(245, 245, 245) !important;
+.myhead {
+  background-color: rgb(245, 245, 245) !important;
 }
-.arch{
-    background-color: rgb(202, 255, 200);
-    border-radius: .4rem ;
-    padding: 2px;
-    padding-right:1.5rem ;
+.arch {
+  background-color: rgb(202, 255, 200);
+  border-radius: 0.4rem;
+  padding: 2px;
+  padding-right: 1.5rem;
 }
-.unarch{
-    background-color: rgb(255, 228, 228);
-    border-radius: .4rem ;
-    padding: 2px;
-    padding-right:1.5rem ;
+.unarch {
+  background-color: rgb(255, 228, 228);
+  border-radius: 0.4rem;
+  padding: 2px;
+  padding-right: 1.5rem;
+}
+.duration {
+  color: blue;
+  font-size: 10px;
+}
+.direction {
+  color: blue !important   ;
+}
+.miss{
+    color:red !important;
+
+}
+.ans{
+    color:rgb(0, 197, 197) !important;
+}
+.voice{
+    color:blue !important;
+}
+.filter{
+  margin:1rem;
+}
+.option{
+  color:blue !important;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+.popup{
+  
+}
+.popupId{
+  /* font-size: .5rem; */
+  color:blue;
+}
+.popupHead{
+  font-weight: 500;
+}
+.papupData{
+  font-weight: 300;
+}
+.popupCalltype{
+  color:blue;
 }
