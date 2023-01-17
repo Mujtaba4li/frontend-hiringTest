@@ -1,7 +1,7 @@
 .mytable {
   margin-left: 2rem !important;
   margin-right: 2rem !important;
-  width: 80rem !important;
+  width: 95% !important;
 }
 .myhead {
   background-color: rgb(245, 245, 245) !important;
@@ -58,4 +58,12 @@
 }
 .popupCalltype{
   color:blue;
+}
+.myBtn{
+  font-size: .7rem !important;
+}
+.myFooter{
+  /* background-color: red; */
+ justify-content: center;
+ align-items: center;
 }
